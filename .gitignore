@@ -72,7 +72,7 @@ celerybeat-schedule.*
 # Environments
 .env
 .venv
-.idea
+.idea/
 env/
 venv/
 ENV/
