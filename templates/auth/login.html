@@ -10,11 +10,14 @@
     <input type="checkbox" id="check">
     <div class="login form">
       <header>Login</header>
-      <form action="#">
-        <input type="text" placeholder="Enter your email">
-        <input type="password" placeholder="Enter your password">
+      <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <label class="form-label" for="id_username">Login</label>
+        <input type="text" placeholder="Login" id="id_username" name="username" required>
+        <label class="form-label" for="id_username">Password</label>
+        <input type="password" placeholder="Password" id="id_password" name="password"  required>
+        <input type="submit" class="button" value="Login">
         <a href="#">Forgot password?</a>
-        <input type="button" class="button" value="Login">
       </form>
       <div class="signup">
         <span class="signup">Don't have an account?
