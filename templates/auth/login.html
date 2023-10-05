@@ -10,8 +10,12 @@
     <input type="checkbox" id="check">
     <div class="login form">
       <header>Login</header>
+      {% for error in login_form.non_field_errors %}
+      <header>{{ error }}</header>
+      {% endfor %}
       <form method="post" action="{% url 'login' %}">
         {% csrf_token %}
+
         <label class="form-label" for="id_username">Login</label>
         <input type="text" placeholder="Login" id="id_username" name="username" required>
         <label class="form-label" for="id_username">Password</label>
