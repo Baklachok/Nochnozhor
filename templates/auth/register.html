@@ -1,0 +1,25 @@
+{% extends 'base-page.html' %}
+{% load static %}
+
+{% block title %}
+	Signup
+{% endblock title %}
+
+{% block container %}
+    <div class="container">
+        <input type="checkbox" id="check" checked = "true">
+    <div class="registration form">
+      <header>Signup</header>
+      <form method="post" action="{% url 'register' %}">
+        {% csrf_token %}
+          {{ user_form }}
+        <input type="submit" class="button" value="Signup">
+      </form>
+      <div class="signup">
+        <span class="signup">Already have an account?
+         <li><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+        </span>
+      </div>
+    </div>
+    </div>
+{% endblock container %}
