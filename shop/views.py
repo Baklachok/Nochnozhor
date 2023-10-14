@@ -1,3 +1,9 @@
 from django.shortcuts import render
+from django.views.generic import ListView
 
-# Create your views here.
+from shop.models import Product
+
+
+class ProductsListView(ListView):
+    model = Product
+    template_name = 'shop/shop.html'

@@ -24,4 +24,5 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('admin/', admin.site.urls),
     path('auth/', include('authentication.urls')),
+    path('shop/', include('shop.urls')),
 ]
