@@ -31,8 +31,8 @@
 
 		      		{% for product in object_list %}
 						<div class="col-12 col-md-4 col-lg-3 mb-5">
-							<form method="post" action="">
-								<a class="product-item" href="">
+							<form method="post" action="{% url 'add_item_to_cart' product.pk %}">
+								<button class="product-item" >
 									<img src="{{product.image_url}}" class="img-fluid product-thumbnail">
 									<h3 class="product-title">{{product.name}}</h3>
 									<strong class="product-price">{{ product.price }}</strong>
@@ -40,7 +40,7 @@
 									<span class="icon-cross">
 										<img src="{% static '/images/cross.svg' %}" class="img-fluid">
 									</span>
-								</a>
+								</button>
 							</form>
 						</div>
 					{% endfor %}
