@@ -20,7 +20,6 @@ def add_item_to_cart(request, pk):
                                   quantity=1,
                                   price=product.price)
         cart.save()
-        return redirect('cart-view')
     return redirect('shop')
 
 @login_required(login_url=reverse_lazy('login'))
